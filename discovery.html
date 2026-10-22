@@ -67,7 +67,7 @@ input,select,textarea{width:100%;background:#0a0f12;color:#f2f5f7;border:1px sol
 </div></main>
 <footer class="footer"><div><div class="brand"><span class="mark">M</span>MKB<b>Consulting</b></div>Better systems. Stronger businesses.</div><div>Questions? Get in touch.<br><b>Contact details to be added before launch</b></div></footer>
 <script>
-const EMAILJS_CONFIG={publicKey:OYDEFePcYvDjBdczh,serviceId:service_8pez0v9,templateId:template_heb4vbg};
+const EMAILJS_CONFIG={publicKey:'OYDEFePcYvDjBdczh',serviceId:'service_8pez0v9',templateId:'template_heb4vbg'};
 const form=document.getElementById('discovery'),pages=[...document.querySelectorAll('.page')],steps=[...document.querySelectorAll('.step')],back=document.getElementById('back'),next=document.getElementById('next'),review=document.getElementById('review');let current=0;
 function showPage(n){current=n;pages.forEach((p,i)=>p.classList.toggle('hidden',i!==n));review.classList.add('hidden');steps.forEach((s,i)=>{s.classList.toggle('active',i===n);s.classList.toggle('done',i<n);s.querySelector('.num').textContent=i<n?'✓':i+1});back.disabled=n===0;next.textContent=n===3?'Review answers →':'Next step →';document.getElementById('steps').scrollIntoView({behavior:'smooth',block:'nearest'});}
 function validPage(){const required=[...pages[current].querySelectorAll('[required]')];for(const el of required){if(el.type==='radio'){if(!pages[current].querySelector(`input[name="${el.name}"]:checked`)){el.focus();alert('Please complete the required fields before continuing.');return false;}}else if(!el.checkValidity()){el.reportValidity();return false;}}return true;}
